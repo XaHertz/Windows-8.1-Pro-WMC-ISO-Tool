@@ -11,13 +11,11 @@ echo ::::                                                     -By Xahertz       
 echo ::::                                                                       ::::
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
-echo 1. If you have ISO press 1
-echo 2. If you have DVD or your installation files are in a folder press 2
-echo.
-SET /p var=
+FOR /F "tokens=*" %%A IN ('dialog-boxes\DropDownBox.exe "Select what you have:\n- You have a Windows 8.1 ISO\n- You have a Windows 8.1 DVD\n- Your Windows 8.1 Installation Files are in a Folder" "Windows 8.1 Installation Files" /W:330 /H:140 /F:dialog-boxes\1.txt /C:40 ^|^| ECHO Error^& IF ERRORLEVEL 2 ECHO Cancel') DO SET var=%%A
 cls
-if %var%==1 goto :1
-if %var%==2 goto :2
+if %var%==ISO goto :1
+if %var%==DVD goto :2
+if %var%==Folder goto :2
 
 :1
 FOR /F "tokens=*" %%A IN ('dialog-boxes\OpenFileBox.exe "Disc Image File (*.iso)|*.iso" "%USERPROFILE%\Desktop" "Select Your Windows 8.1 ISO" ^|^| ECHO Error^& IF ERRORLEVEL 2 ECHO Cancel') DO SET ISOpath=%%A
@@ -40,16 +38,7 @@ echo ::::                       Select Compression Type                         
 echo ::::                                                                       ::::
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
-echo 1. ESD - High compression
-echo        - ISO size is around 3.2 GB -----Press 1 For ESD
-echo        - Takes lots of time
-echo        - It has taken about 2hrs in my pc
-echo 2. WIM - Normal compression
-echo        - ISO size is around 3.8 GB -----Press 2 For WIM
-echo        - Takes not so much time
-echo        - It has taken about 1hrs in my pc
-echo.
-SET /p type=
+FOR /F "tokens=*" %%A IN ('dialog-boxes\DropDownBox.exe "Select What you want ESD or WIM Compression:\nESD  - High compression\n         - ISO size is around 3.2 GB\n         - Takes lots of time\n         - It has taken about 2hrs in my pc\nWIM  - Normal compression\n         - ISO size is around 3.8 GB\n         - Takes not so much time\n         - It has taken about 1hrs in my pc" "Select Compression Type" /W:320 /H:205 /F:dialog-boxes\2.txt /C:40 ^|^| ECHO Error^& IF ERRORLEVEL 2 ECHO Cancel') DO SET type=%%A
 cls
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo ::::                                                                       ::::
@@ -62,8 +51,9 @@ echo Are you sure you want to continue. . .
 echo.
 pause
 cls
-if %var%==1 goto :11
-if %var%==2 goto :22
+if %var%==ISO goto :11
+if %var%==DVD goto :22
+if %var%==Folder goto :22
 
 :11
 7z\7z.exe x "%ISOpath%" -o"%var2%\ISO"
@@ -118,8 +108,8 @@ goto :imagex
 :imagex
 %imagex% /flags "ProfessionalWMC"  /info "%var2%\ISO\sources\install.wim" 1 "Windows 8.1 Pro with Media Center" "Windows 8.1 Pro with Media Center"
 ren "%var2%\ISO\sources\install.wim" install2.wim
-if %type%==1 goto :esd1
-if %type%==2 goto :wim1
+if %type%==ESD goto :esd1
+if %type%==WIM goto :wim1
 
 :esd1
 %dism% /export-image /SourceImageFile:"%var2%\ISO\sources\install2.wim" /SourceIndex:1 /DestinationImageFile:"%var2%\ISO\sources\install.esd" /Compress:recovery /CheckIntegrity
