@@ -68,15 +68,15 @@ goto :77
 :77
 IF EXIST "%PROGRAMFILES(X86)%" (GOTO 64BIT) ELSE (GOTO 32BIT)
 :64bit
-set dism="%ProgramFiles(x86)%\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\dism.exe"
-set oscdimg="%ProgramFiles(x86)%\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg\oscdimg.exe"
-set imagex="%ProgramFiles(x86)%\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\DISM\imagex.exe"
+set dism="dism\x64\dism.exe"
+set oscdimg="oscdimg\oscdimgx64.exe"
+set imagex="dism\x64\imagex.exe"
 goto :install
 
 :32bit
-set dism="%ProgramFiles%\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\DISM\dism.exe"
-set oscdimg="%ProgramFiles%\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\Oscdimg\oscdimg.exe"
-set imagex="%ProgramFiles%\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\DISM\imagex.exe"
+set dism="dism\x86\dism.exe"
+set oscdimg="oscdimg\oscdimgx86.exe"
+set imagex="dism\x86\imagex.exe"
 goto :install
 
 :install

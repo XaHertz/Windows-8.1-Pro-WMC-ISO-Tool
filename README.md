@@ -26,4 +26,12 @@ ADK can be downloaded from https://www.microsoft.com/en-in/download/details.aspx
 - **Dialog Boxes**<br/>
   This tool includes Dialog Boxes by **Rob van der Woude**.<br/>
   Dialog Boxes can be downloaded from https://www.robvanderwoude.com/dialogboxes.php.
-  
+
+## About This Version
+ This is a Special Version of the Tool that includes the Deployment tools with it. I Made this version for my personal use so that I can use it without installing Deployment tools every time. For convenience I have made this version available in a separate branch, but since I cannot redistribute Deployment tools you have to add the binaries manually.
+
+ Here is how:
+ 1. Copy all the files and folders inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\DISM"** to **dism\x64** folder.
+ 2. Copy all the files and folders inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\DISM"** to **dism\x86** folder.
+ 3. Copy **oscdimg.exe** inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg"** to **Oscdimg** folder. And rename it to **oscdimgx64.exe**.
+ 4. Copy **oscdimg.exe** inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\Oscdimg"** to **Oscdimg** folder. And rename it to **oscdimgx86.exe**.
