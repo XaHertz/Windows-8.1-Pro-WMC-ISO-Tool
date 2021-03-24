@@ -1,6 +1,6 @@
 @echo off
 SET BATDIR=%~dp0
-cd %BATDIR% 
+cd /d %BATDIR% 
 color a
 Title Windows 8.1 Pro with Media Center ISO Creation Tool
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
