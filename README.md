@@ -12,7 +12,7 @@
 3. Select compression type ESD or WIM. ESD is powerful than WIM but it takes a lot of time and resources.
 4. Now you can relax all the process is done automatically. You can leave computer because it takes upto an hour depending upon your computer's configuration.
 
-## System Requirments
+## System Requirements
 This Tool Requires Deployment tools from Windows ADK 8.1 to be able run. But, now that ADK 8.1 is no longer available, I'm publishing this version that I made for my personal use so that I can use it without installing Deployment tools every time. This Version includes Deployment tools with it.
 
 There are two files one (**Windows-8.1-Pro-WMC-ISO-Tool-v1.2-DT.zip**) with Deployment tools **included** and one (**Windows-8.1-Pro-WMC-ISO-Tool-v1.2.zip**) in which you'll have to add files from Deployment tools (If you already have it) manually. Here is how:
