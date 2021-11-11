@@ -13,9 +13,16 @@
 4. Now you can relax all the process is done automatically. You can leave computer because it takes upto an hour depending upon your computer's configuration.
 
 ## System Requirments
-This Tool Requires Deployment tools from Windows ADK 8.1 to be able run.<br/>
-Deployment tools are about 60MB in size, other features of ADK are not Required.<br/>
-ADK can be downloaded from https://www.microsoft.com/en-in/download/details.aspx?id=39982.
+This Tool Requires Deployment tools from Windows ADK 8.1 to be able run. But, now that ADK 8.1 is no longer available, I'm publishing this version that I made for my personal use so that I can use it without installing Deployment tools every time. This Version includes Deployment tools with it.
+
+There are two files one (**Windows-8.1-Pro-WMC-ISO-Tool-v1.2-DT.zip**) with Deployment tools **included** and one (**Windows-8.1-Pro-WMC-ISO-Tool-v1.2.zip**) in which you'll have to add files from Deployment tools (If you already have it) manually. Here is how:
+
+1. Copy all the files and folders inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\DISM"** to **dism\x64** folder.
+2. Copy all the files and folders inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\DISM"** to **dism\x86** folder.
+3. Copy **oscdimg.exe** inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg"** to **Oscdimg** folder. And rename it to **oscdimgx64.exe**.
+4. Copy **oscdimg.exe** inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\Oscdimg"** to **Oscdimg** folder. And rename it to **oscdimgx86.exe**.
+
+If unsure, download [**Windows-8.1-Pro-WMC-ISO-Tool-v1.2-DT.zip**](https://github.com/XaHertz/Windows-8.1-Pro-WMC-ISO-Tool/releases/download/v1.2/Windows-8.1-Pro-WMC-ISO-Tool-v1.2-DT.zip).
 
 ## Credits
 - **7-zip**<br/>
@@ -26,12 +33,3 @@ ADK can be downloaded from https://www.microsoft.com/en-in/download/details.aspx
 - **Dialog Boxes**<br/>
   This tool includes Dialog Boxes by **Rob van der Woude**.<br/>
   Dialog Boxes can be downloaded from https://www.robvanderwoude.com/dialogboxes.php.
-
-## About This Version
- This is a Special Version of the Tool that includes the Deployment tools with it. I Made this version for my personal use so that I can use it without installing Deployment tools every time. For convenience I have made this version available in a separate branch, but since I cannot redistribute Deployment tools you have to add the binaries manually.
-
- Here is how:
- 1. Copy all the files and folders inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\DISM"** to **dism\x64** folder.
- 2. Copy all the files and folders inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\DISM"** to **dism\x86** folder.
- 3. Copy **oscdimg.exe** inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\amd64\Oscdimg"** to **Oscdimg** folder. And rename it to **oscdimgx64.exe**.
- 4. Copy **oscdimg.exe** inside **"C:\Program Files\Windows Kits\8.1\Assessment and Deployment Kit\Deployment Tools\x86\Oscdimg"** to **Oscdimg** folder. And rename it to **oscdimgx86.exe**.
