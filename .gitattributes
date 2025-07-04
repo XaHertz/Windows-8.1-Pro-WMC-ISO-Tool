@@ -1,0 +1,10 @@
+* text=auto
+
+.gitattributes    text eol=lf
+.gitignore        text eol=lf
+LICENSE           text eol=crlf
+*.bat             text eol=crlf
+*.md              text eol=crlf
+*.txt             text eol=crlf
+*.exe             binary
+*.dll             binary
